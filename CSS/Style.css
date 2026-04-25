@@ -1,0 +1,201 @@
+﻿/* --- 1. GLOBAL LAYOUT --- */
+html, body {
+    height: 100% !important;
+    margin: 0; padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+form#form1 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.main-content-wrapper {
+    flex: 1 0 auto;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 20px !important;
+    box-sizing: border-box;
+}
+
+.footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+.header {
+    background-color: #004080; color: white;
+    padding: 20px 40px; text-align: center;
+}
+.navbar { position: relative; text-align: right; padding: 10px 20px; }
+#menu-toggle { display: none; }
+.hamburger { font-size: 30px; color: white; cursor: pointer; }
+.nav-links {
+    display: none; background-color: #004080; position: absolute;
+    right: 0; top: 50px; width: 200px; z-index: 1000;
+}
+#menu-toggle:checked ~ .nav-links { display: block; }
+.nav-links a { display: block; padding: 15px; color: white; text-decoration: none; }
+
+/* --- 3. HOME PAGE (GRID & CARDS) --- */
+/* This keeps your 3 portal icons in a row as seen in your photo */
+.dashboard-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    flex-wrap: wrap !important;
+    margin-top: 40px !important;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* HOME PAGE BLUE BUTTONS (Links that look like buttons) */
+.btn-link, .card a {
+    display: inline-block !important;
+    background-color: #004080 !important;
+    color: white !important;
+    padding: 12px 25px !important;
+    text-decoration: none !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    margin-top: 15px !important;
+    width: 80% !important;
+}
+
+/* --- 4. LOGIN & REGISTRATION CONTAINERS --- */
+.login-container, .registration-container, .form-container, [id*="Register"] {
+    background-color: white !important;
+    padding: 40px !important;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1) !important;
+    border-radius: 12px !important;
+    border: 1px solid #ddd !important;
+    margin: 40px auto !important;
+    width: 95% !important;
+    max-width: 450px !important;
+}
+
+.registration-container, [id*="Register"] {
+    max-width: 600px !important; 
+}
+
+/* --- 5. THE SMALL REGISTER BUTTON FIX --- */
+/* CRITICAL: This ONLY targets buttons inside Login/Register containers */
+/* --- 5. THE SMALL REGISTER BUTTON FIX --- */
+.login-container input[type=submit], 
+.registration-container input[type=submit],
+#MainContent_btnRegister, 
+#MainContent_btnLogin {
+    display: block !important;
+    width: 150px !important;      /* Slightly narrower */
+    height: 35px !important;      /* REDUCED HEIGHT */
+    line-height: 35px !important; /* MATCH HEIGHT TO CENTER TEXT */
+    background-color: #004080 !important;
+    color: #ffffff !important;
+    font-size: 14px !important;   /* Slightly smaller font for shorter height */
+    font-weight: bold !important;
+    text-align: center !important;
+    border: none !important;
+    border-radius: 4px !important; /* Slightly sharper corners for a small button */
+    margin: 25px auto !important; 
+    cursor: pointer !important;
+    padding: 0 !important;        /* Ensures no extra padding pushes height */
+}
+
+/* --- 6. FORMS & TABLES --- */
+input[type=text], input[type=password], input[type=email], textarea {
+    width: 100% !important;
+    padding: 12px; margin: 8px 0 16px 0;
+    border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+}
+
+table { margin: 0 auto !important; width: 70% !important; }
+h2, h3 { text-align: center !important; color: #004080; margin-bottom: 20px !important; }
+
+/* --- UNIVERSAL LOGOUT BUTTON STYLE --- */
+.btn-logout {
+    background-color: #c9302c !important; /* Professional Muted Red */
+    color: white !important;
+    padding: 10px 24px !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    display: inline-block !important;
+    text-transform: uppercase; /* Makes it look more like a button action */
+    letter-spacing: 0.5px;
+}
+
+.btn-logout:hover {
+    background-color: #ac2925 !important; /* Slightly darker red on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+    transform: translateY(-1px) !important; /* Small lift effect */
+}
+
+/* Container to ensure the button is perfectly centered at the bottom */
+.logout-wrapper {
+    margin-top: 50px !important;
+    text-align: center !important;
+    padding-bottom: 20px;
+}
+
+/* Container to center the button */
+.print-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* The actual Print Button style - fixes the 'too large' issue */
+.btn-print {
+    background-color: #004080 !important; /* Your theme blue */
+    color: white !important;
+    padding: 10px 25px !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    width: auto !important; /* Forces button to fit the text */
+    display: inline-block !important; 
+    transition: background 0.3s ease;
+}
+
+.btn-print:hover {
+    background-color: #002d59 !important;
+}
+
+/* Fixes the table layout for the report */
+.report-table {
+    width: 100% !important;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+/* CRITICAL: Hides the button and site header when printing */
+@media print {
+    .btn-print, .print-container, header, footer, .navbar {
+        display: none !important;
+    }
+    
+    .admin-container {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
