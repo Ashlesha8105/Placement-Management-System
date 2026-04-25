@@ -31,5 +31,15 @@ Use your own configuration in `Web.Release.config` or environment variables.
 - `/Company` → Company module
 - `Web.config` → Configuration file
 
+## 📂upload
+(Add resume here)
+
+## 🗄️ Database Setup
+- Import SQL file
+- Create database: placementdb
+
+## 🔧 Configuration
+- Update connection string in Web.Release.config
+
 ## 👩‍💻 Author
 Ashlesha Vichare
